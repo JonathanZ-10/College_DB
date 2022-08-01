@@ -1,0 +1,26 @@
+# dependencies
+ReactApp/node_modules
+ReactApp/.pnp
+ReactApp/.pnp.js
+
+# testing
+ReactApp/coverage
+
+# production
+ReactApp/build
+
+# misc
+ReactApp/.vscode
+ReactApp/conf
+ReactApp/.DS_Store
+ReactApp/.env
+ReactApp/.env.local
+ReactApp/.env.development.local
+ReactApp/.env.test.local
+ReactApp/.env.production.local
+ReactApp/npm-debug.log*
+
+# WebAPI
+WebAPI/bin
+WebAPI/obj
+WebAPI/.vs

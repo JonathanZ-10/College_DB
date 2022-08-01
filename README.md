@@ -21,7 +21,7 @@ Programmer & Designer: Jonathan Zamora
 - Ability to display, store, and delete profile photos
 - Intricate and more complicated code accessed through AWS
 
-##Todo
+## Todo
 - Edit dockerfiles and finish uploading to AWS
 
 ## Known Issues
