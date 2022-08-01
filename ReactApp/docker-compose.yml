@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+  sql:
+    image: 2019SQL
+    restart: always
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "SApassword123"
+    ports:
+      - 1433:1433
+    networks:
+      - shared-network
+
+  api:
+    container_name: react-app
+    restart: unless-stopped
+    image: webapi:latest
+    ports:
+      - 5000:5000
+    build:
+      context: api
+      target: base
+      dockerfile: dockerfile
+    networks:
+      - shared-network
+    depends_on:
+      - sql
+    
+  frontend:
+    container_name: frontend
+    restart: unless-stopped
+    image: frontend:latest
+    build:
+      context: my-app
+      target: base
+      dockerfile: dockerfile
+    ports:
+      - 5000:5000
+    networks:
+      - shared-network
+    depends_on:
+      - api
+
+
+
+networks:
+  shared-network:
+
